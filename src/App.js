@@ -4,11 +4,8 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 
 export default function App() {
   const [mode, setMode] = useState('light'); // Whether dark mode is enable or not
@@ -104,7 +101,7 @@ export default function App() {
   }
   return (
     <>
-      <Router basename='/textutils' >
+      <Router>
         <Navbar title="Naive-Coder" home="Home" mode={mode} active1={active1} active2={active2} activeStatus1={activeStatus1} activeStatus2={activeStatus2} toggleMode1={toggleMode1} toggleMode2={toggleMode2} toggleMode3={toggleMode3} toggleMode4={toggleMode4} />
         <Alert alert={alert} />
         <div className="container">
