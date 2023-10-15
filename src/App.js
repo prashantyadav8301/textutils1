@@ -5,7 +5,7 @@ import TextForm from './components/TextForm';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
@@ -104,12 +104,12 @@ export default function App() {
   }
   return (
     <>
-      <Router>
+      <Router basename='/textutils'>
         <Navbar title="Naive-Coder" home="Home" mode={mode} active1={active1} active2={active2} activeStatus1={activeStatus1} activeStatus2={activeStatus2} toggleMode1={toggleMode1} toggleMode2={toggleMode2} toggleMode3={toggleMode3} toggleMode4={toggleMode4} />
         <Alert alert={alert} />
         <div className="container">
           <Routes>
-            <Route exact path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />} />
+            <Route exact path="/textutils" element={<TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />} />
             {/* <TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} /> */}
             <Route exact path="/about" element={<About mode={mode} />} />
           </Routes>
